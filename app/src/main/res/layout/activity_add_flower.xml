@@ -24,16 +24,6 @@
         android:layout_alignParentEnd="true"
         android:hint="@string/flower_name" />
 
-    <Button
-        android:text="@string/flower_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="129dp"
-        android:id="@+id/addButton" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,4 +35,13 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:hint="@string/flower_freq" />
+
+    <Button
+        android:text="@string/flower_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addButton"
+        android:layout_marginTop="88dp"
+        android:layout_below="@+id/frequency"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

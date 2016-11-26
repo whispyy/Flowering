@@ -96,6 +96,17 @@ public class FlowerDB extends SQLiteOpenHelper {
         return cursorToFlower(cursor);
     }
 
+    /*
+    Récupérer une plante en fonction de son nom
+     */
+    public Flower getFlower(String name){
+        Cursor cursor = bd.query(TABLE_NAME, null, "name = " + name, null, null,null, null);
+        if (cursor.getCount() == 0)
+            return null;
+        cursor.moveToFirst();
+        return cursorToFlower(cursor);
+    }
+
     // Récuperer les plantes de la base dans une ArrayList
     public ArrayList<Flower> getFlowers() {
 

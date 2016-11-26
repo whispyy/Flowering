@@ -21,7 +21,9 @@
         <activity
             android:name=".AddFlowerActivity"
             android:parentActivityName=".Home" />
-        <activity android:name=".FlowerDetail"></activity>
+        <activity
+            android:name=".FlowerDetail"
+            android:parentActivityName=".Home"/>
     </application>
 
 </manifest>
