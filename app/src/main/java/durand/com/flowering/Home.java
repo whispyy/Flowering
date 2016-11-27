@@ -99,8 +99,8 @@ public class Home extends AppCompatActivity {
         flv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                view.setBackgroundColor(Color.RED);
-                Toast.makeText(getApplicationContext(), ((TextView) view).getText() , Toast.LENGTH_LONG).show();
+                view.setBackgroundColor(Color.GRAY);
+                //Toast.makeText(getApplicationContext(), ((TextView) view).getText() , Toast.LENGTH_LONG).show();
                 Bundle bundle = new Bundle();
                 bundle.putString("name",((TextView) view).getText().toString());
                 Intent mIntent = new Intent(Home.this, FlowerDetail.class).putExtras(bundle);
@@ -113,6 +113,7 @@ public class Home extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 view.setBackgroundColor(Color.GREEN);
+                //update lastWaterDay in DB
                 return true;
             }
         });
