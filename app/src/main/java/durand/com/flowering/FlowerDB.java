@@ -39,7 +39,7 @@ public class FlowerDB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + TABLE_NAME + "("
                 + "idFlower INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + "name TEXT NOT NULL," + "frequency INTEGER NOT NULL," + "lastWaterDay INTEGER NOT NULL);");
+                + "name TEXT NOT NULL," + "frequency INTEGER NOT NULL," + "lastWaterDay LONG NOT NULL);");
     }
 
     /* Mise a jour
@@ -134,7 +134,7 @@ public class FlowerDB extends SQLiteOpenHelper {
                 (cursor.getInt(0)),
                 (cursor.getString(1)),
                 (cursor.getInt(2)),
-                (cursor.getInt(3)));
+                (cursor.getLong(3)));
         return flower;
     }
 }

@@ -2,7 +2,7 @@
     <string name="app_name">Flowering</string>
     <string name="action_settings">Settings</string>
     <string name="name_empty">Name cannot be empty</string>
-    <string name="freq_empty">Frequency cannot be empty or null</string>
+    <string name="freq_empty">Frequency cannot be empty or must be upper than 1</string>
 
     <string name="flower_name">Flower Name</string>
     <string name="flower_freq">Frequency</string>

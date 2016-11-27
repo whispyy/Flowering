@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class FlowerDetail extends AppCompatActivity {
@@ -39,7 +41,8 @@ public class FlowerDetail extends AppCompatActivity {
         TextView detail_freq = (TextView) findViewById(R.id.detail_freq);
         detail_freq.setText("Frequency "+ flower.getFrequency());
         //display plant lastWaterDay
-
+        TextView detail_lastD = (TextView) findViewById(R.id.detail_lastD);
+        detail_lastD.setText("Last Watering "+flower.getStringLastWaterDay());
 
 
         Button modify = (Button) findViewById(R.id.modify);

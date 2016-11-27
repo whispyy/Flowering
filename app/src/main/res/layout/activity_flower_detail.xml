@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="43dp"
-        android:id="@+id/detail_freq"
+        android:id="@+id/detail_lastD"
         android:layout_below="@+id/detail_name"
         android:layout_alignLeft="@+id/detail_name"
         android:layout_alignStart="@+id/detail_name"
@@ -48,4 +48,16 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:id="@+id/detail_freq"
+        android:textAppearance="@android:style/TextAppearance.Material.Display1"
+        android:layout_below="@+id/detail_lastD"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

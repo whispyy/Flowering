@@ -2,6 +2,11 @@ package durand.com.flowering;
 
 import android.content.Context;
 
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 /**
  * Created by JF on 26/11/2016.
  */
@@ -10,7 +15,7 @@ public class Flower {
     private int id;
     private String name;
     private int frequency;
-    private int lastWaterDay;
+    private Long lastWaterDay;
 
     /*
     Constructeur par défaut
@@ -18,13 +23,13 @@ public class Flower {
     public Flower(String name, int frequency){
         this.name = name;
         this.frequency = frequency;
-        this.lastWaterDay = 0;
+        this.lastWaterDay = SettingsActivity.getToday();
     }
 
     /*
     Constructeur ou l'utilisateur défini tous les attributs
      */
-    public Flower(int id, String name, int frequency, int lastWaterDay){
+    public Flower(int id, String name, int frequency, Long lastWaterDay){
         this.id = id;
         this.name = name;
         this.frequency = frequency;
@@ -47,10 +52,16 @@ public class Flower {
         return frequency;
     }
 
-    public int getLastWaterDay() {
+    public Long getLastWaterDay() {
         return lastWaterDay;
     }
 
+    //convertir le timestamp en string de type dd/mm/yyyy
+    public String getStringLastWaterDay() {
+        DateFormat stringDay = new SimpleDateFormat("dd/MM/yyyy");
+        Date netDate = (new Date(lastWaterDay));
+        return stringDay.format(netDate);
+    }
     /* Définitions des setters
      */
 
@@ -66,7 +77,7 @@ public class Flower {
         this.frequency = frequency;
     }
 
-    public void setLastWaterDay(int lastWaterDay) {
+    public void setLastWaterDay(Long lastWaterDay) {
         this.lastWaterDay = lastWaterDay;
     }
 
