@@ -49,6 +49,14 @@ public class FlowerDetail extends AppCompatActivity {
                 modifyShow();
             }
         });
+
+        Button delete = (Button) findViewById(R.id.delete);
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteShow();
+            }
+        });
     }
 
     /**
@@ -80,6 +88,29 @@ public class FlowerDetail extends AppCompatActivity {
                         new FlowerDB(getApplicationContext()).updateFlower(flower);
                         Toast.makeText(getApplicationContext(), "New name : "+flower.getName(), Toast.LENGTH_SHORT).show();
                         updateTextView("Name "+name2);
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                    }
+                })
+                .show();
+    }
+
+    /**
+     * Display a dialog box to delete the plant
+     */
+    public void deleteShow() {
+
+        new AlertDialog.Builder(this)
+                .setTitle("Delete")
+                .setMessage("Delete this plant ?")
+                //.setView(newName)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        new FlowerDB(getApplicationContext()).deletePlant(flower.getId());
+                        Toast.makeText(getApplicationContext(), flower.getName()+", removed!", Toast.LENGTH_SHORT).show();
+                        finish();
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

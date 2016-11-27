@@ -23,7 +23,7 @@
             android:parentActivityName=".Home" />
         <activity
             android:name=".FlowerDetail"
-            android:parentActivityName=".Home"/>
+            android:parentActivityName=".Home" />
     </application>
 
 </manifest>

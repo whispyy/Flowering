@@ -23,7 +23,7 @@ public class AddFlowerActivity extends AppCompatActivity {
 
                 if(nameField.getText().toString().equals(""))
                     Toast.makeText(getApplication().getBaseContext(), getString(R.string.name_empty),Toast.LENGTH_SHORT).show();
-                else if (frequencyField.getText().toString().equals(""))
+                else if (frequencyField.getText().toString().equals("") || frequencyField.getText().toString().equals("0"))
                     Toast.makeText(getApplication().getBaseContext(), getString(R.string.freq_empty),Toast.LENGTH_SHORT).show();
                 else {
                     FlowerDB db = new FlowerDB(getApplicationContext());
