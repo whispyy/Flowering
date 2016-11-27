@@ -10,25 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="durand.com.flowering.FlowerDetail">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/detail_name"
-        android:layout_alignLeft="@+id/detail_name"
-        android:layout_alignStart="@+id/detail_name"
-        android:layout_marginTop="43dp"
-        android:id="@+id/detail_freq" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:id="@+id/detail_name"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
     <Button
         android:text="Modify"
         android:layout_width="wrap_content"
@@ -46,4 +27,25 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:id="@+id/delete" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="43dp"
+        android:id="@+id/detail_freq"
+        android:layout_below="@+id/detail_name"
+        android:layout_alignLeft="@+id/detail_name"
+        android:layout_alignStart="@+id/detail_name"
+        android:textAppearance="@android:style/TextAppearance.Material.Display1" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/detail_name"
+        android:textAppearance="@android:style/TextAppearance.Material.Display1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

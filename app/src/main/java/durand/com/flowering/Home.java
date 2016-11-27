@@ -64,9 +64,9 @@ public class Home extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        //Lancer l'activité settings depuis l'accueil
         if (id == R.id.action_settings) {
-
+            startActivity(new Intent(Home.this, SettingsActivity.class));
             return true;
         }
 
@@ -93,15 +93,15 @@ public class Home extends AppCompatActivity {
             flowersName[i] = flowers.get(i).getName();
         //flowers.toArray(flowersName);
 
-        final ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, flowersName);
+        final ArrayAdapter<String> adapter =
+                new HomeAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, flowersName);
         flv.setAdapter(adapter);
-
         //Le clic simple renvoie vers le détail de la plante
         flv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 view.setBackgroundColor(Color.GRAY);
-                //Toast.makeText(getApplicationContext(), ((TextView) view).getText() , Toast.LENGTH_LONG).show();
+                //passer le nom de la plante en paramètre
                 Bundle bundle = new Bundle();
                 bundle.putString("name",((TextView) view).getText().toString());
                 Intent mIntent = new Intent(Home.this, FlowerDetail.class).putExtras(bundle);
