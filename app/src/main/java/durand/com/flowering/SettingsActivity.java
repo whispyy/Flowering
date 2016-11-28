@@ -1,14 +1,22 @@
 package durand.com.flowering;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 
 public class SettingsActivity extends AppCompatActivity {
@@ -30,11 +38,48 @@ public class SettingsActivity extends AppCompatActivity {
         currentDate.setText(stringToday.format(netDate));
 
         //modifier la date d'aujourd'hui
-
-
+        Button modifyDate = (Button) findViewById(R.id.modifyDate);
+        modifyDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                modifyDateShow();
+            }
+        });
 
     }
 
+    public void modifyDateShow(){
+        final DatePicker newDate = new DatePicker(this);
+
+
+
+        new AlertDialog.Builder(this)
+                .setTitle("Modify")
+                .setMessage("Date :")
+                .setView(newDate)
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        int y = newDate.getYear();
+                        int m = newDate.getMonth();
+                        int d = newDate.getDayOfMonth();
+                        Calendar c = Calendar.getInstance();
+                        c.set(y,m,d);
+                        Long newDateTimeStamp = c.getTimeInMillis();
+                        setToday(newDateTimeStamp);
+                        //update affichage
+                        TextView currentDate = (TextView) findViewById(R.id.currentDate);
+                        DateFormat stringToday = new SimpleDateFormat("dd/MM/yyyy");
+                        Date netDate = (new Date(today));
+                        currentDate.setText(stringToday.format(netDate));
+                        Toast.makeText(SettingsActivity.this, "Date changed !", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                    }
+                })
+                .show();
+    }
 
     public static void setToday(){
         today = (System.currentTimeMillis());

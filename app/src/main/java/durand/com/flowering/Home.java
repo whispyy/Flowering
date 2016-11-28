@@ -86,8 +86,8 @@ public class Home extends AppCompatActivity {
     }
 
     public void refreshList() {
-        FlowerDB db = new FlowerDB(getApplicationContext());
-        List<Flower> flowers = db.getFlowers();
+        final FlowerDB db = new FlowerDB(getApplicationContext());
+        final List<Flower> flowers = db.getFlowers();
         String[] flowersName = new String[flowers.size()];
         for (int i = 0; i < flowers.size();i++)
             flowersName[i] = flowers.get(i).getName();
@@ -115,6 +115,10 @@ public class Home extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 view.setBackgroundColor(Color.GREEN);
                 //update lastWaterDay in DB
+                Flower flower = flowers.get(position);
+                flower.setLastWaterDay(SettingsActivity.getToday());
+                db.updateFlower(flower);
+                Toast.makeText(Home.this, flower.getName()+" watered !", Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
