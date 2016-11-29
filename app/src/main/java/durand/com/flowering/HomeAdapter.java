@@ -43,12 +43,13 @@ public class HomeAdapter extends ArrayAdapter {
         //ajouter le comparateur de date (86400000 = 24*60*60*1000) et définir la couleur
         Long today = SettingsActivity.getToday();
         Long nextWatering = flower.getLastWaterDay()+(flower.getFrequency()*86400000);
-        if ((nextWatering == today) || (nextWatering == today+86400000))
-            v.setBackgroundColor(Color.YELLOW);
-        else if (nextWatering < today)
+       if (nextWatering < today)
             v.setBackgroundColor(Color.RED);
-        else
-            v.setBackgroundColor(Color.GREEN);
+       else if (nextWatering > today +86400000)
+           v.setBackgroundColor(Color.GREEN);
+       else
+           //((nextWatering <= today) && (nextWatering >= today+86400000))
+           v.setBackgroundColor(Color.YELLOW);
         return v;
     }
 }

@@ -17,6 +17,7 @@ import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 
 
 public class SettingsActivity extends AppCompatActivity {
@@ -94,4 +95,10 @@ public class SettingsActivity extends AppCompatActivity {
             setToday();
         return today;
     }
+
+    /*public void importFixtures(){
+        List<Flower> flowerList;
+        for (int i = 0; i < 10; i++)
+            flowerList.add(new Flower("Plant"+i,2));
+    }*/
 }

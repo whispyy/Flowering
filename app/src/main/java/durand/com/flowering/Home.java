@@ -113,13 +113,16 @@ public class Home extends AppCompatActivity {
         flv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                view.setBackgroundColor(Color.GREEN);
-                //update lastWaterDay in DB
-                Flower flower = flowers.get(position);
-                flower.setLastWaterDay(SettingsActivity.getToday());
-                db.updateFlower(flower);
-                Toast.makeText(Home.this, flower.getName()+" watered !", Toast.LENGTH_SHORT).show();
-                return true;
+                    view.setBackgroundColor(Color.GREEN);
+                    //update lastWaterDay in DB
+                    Flower flower = flowers.get(position);
+                    flower.setLastWaterDay(SettingsActivity.getToday());
+                    db.updateFlower(flower);
+                    Toast.makeText(Home.this, flower.getName()+" watered !", Toast.LENGTH_SHORT).show();
+                    return true;
+
+
+
             }
         });
 
