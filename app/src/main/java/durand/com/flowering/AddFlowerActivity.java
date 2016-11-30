@@ -7,6 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * AddFlowerActivity : Permet d'ajouter une plante.s
+ */
 public class AddFlowerActivity extends AppCompatActivity {
 
     @Override

@@ -20,7 +20,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-
+/**
+ * SettingsActivity : Permet de régler l'heure et d'importer les fixtures.
+ */
 public class SettingsActivity extends AppCompatActivity {
 
     private static Long today;

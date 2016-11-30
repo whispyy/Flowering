@@ -14,16 +14,30 @@ import java.util.ArrayList;
  * Created by JF on 26/11/2016.
  */
 
+/**
+ * FlowerDB : class permettant de créer et de communiquer avec la base de donnée.
+ */
 public class FlowerDB extends SQLiteOpenHelper {
 
     private SQLiteDatabase bd;
     private String TABLE_NAME = "flower";
 
+    /**
+     * Constructeur de la base de donnée
+     * @param ctx : le contexte
+     */
     public FlowerDB(Context ctx) {
         super(ctx, "flowers.bd", null, 1);
         bd = getWritableDatabase();
     }
 
+    /**
+     * Constructeur de la base de donnée
+     * @param context
+     * @param name
+     * @param factory
+     * @param version
+     */
     public FlowerDB(Context context, String name,
                           SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);

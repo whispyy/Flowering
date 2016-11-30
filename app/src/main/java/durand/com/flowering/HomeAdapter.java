@@ -17,6 +17,7 @@ import java.util.List;
  */
 
 /**
+ * HommeAdapter :
  * Classe modifiant l'affichage des listes notamment utilisé
  * ici pour modifier et mettre a jour les couleurs du background des items de la liste
  */

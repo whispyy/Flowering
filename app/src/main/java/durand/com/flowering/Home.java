@@ -20,6 +20,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Home est la main activity et permet d'afficher la liste des plantes.
+ */
 public class Home extends AppCompatActivity {
 
     //La liste contenant les plantes
@@ -96,6 +99,7 @@ public class Home extends AppCompatActivity {
         final ArrayAdapter<String> adapter =
                 new HomeAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, flowersName);
         flv.setAdapter(adapter);
+
         //Le clic simple renvoie vers le détail de la plante
         flv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
