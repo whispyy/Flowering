@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 /**
- * AddFlowerActivity : Permet d'ajouter une plante.s
+ * AddFlowerActivity : Permet d'ajouter une plante.
  */
 public class AddFlowerActivity extends AppCompatActivity {
 

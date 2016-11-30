@@ -8,9 +8,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
- * Created by JF on 26/11/2016.
+ * Classe modélisant une plante. Le constructeur par défaut 
+ * permet d'ajouter une plante en lui passant en paramêtre un nom et une fréquence d'arrosage.
  */
-
 public class Flower {
     private int id;
     private String name;

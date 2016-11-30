@@ -114,6 +114,7 @@ public class FlowerDB extends SQLiteOpenHelper {
     Récupérer une plante en fonction de son nom
      */
     public Flower getFlowerByName(String name){
+        //Cursor cursor = bd.rawQuery(TABLE_NAME, )
         Cursor cursor = bd.query(TABLE_NAME, new String[]{"idFlower", "name", "frequency", "lastWaterDay"}, "name LIKE \" " + name + "\"", null, null,null, null);
         if (cursor.getCount() == 0)
             return null;

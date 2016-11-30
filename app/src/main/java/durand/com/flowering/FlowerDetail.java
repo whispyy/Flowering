@@ -14,6 +14,11 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
+/**
+ * FlowerDetail : Permet d'afficher le détail d'une plante par un clic depuis la liste de l'activité Home.
+ * Il est également possible de modifier le nom d'une plante en cliquant sur "Modify" ou de supprimer
+ * celle-ci en cliquant sur "Delete"
+ */
 public class FlowerDetail extends AppCompatActivity {
 
     private String name;
@@ -25,14 +30,11 @@ public class FlowerDetail extends AppCompatActivity {
         setContentView(R.layout.activity_flower_detail);
 
         name = getIntent().getExtras().getString("name");
-        /* Crap function to find why it does not match the list item with the string */
         List<Flower> flowers = new FlowerDB(getApplicationContext()).getFlowers();
         for(int i = 0; i < flowers.size(); i++) {
             if ( flowers.get(i).getName().equals(name))
                 flower = flowers.get(i);
         }
-
-        /* end crap*/
 
         //display plant name
         TextView detail_name = (TextView) findViewById(R.id.detail_name);
@@ -72,11 +74,10 @@ public class FlowerDetail extends AppCompatActivity {
     }
 
     /**
-     * Display a dialog box to update data information
+     * Display a dialog box to update the plant's name
      */
     public void modifyShow(){
         final EditText newName = new EditText(this);
-        final EditText newFreq = new EditText(this);
 
         newName.setText(flower.getName());
 

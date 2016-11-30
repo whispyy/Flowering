@@ -1,4 +1,4 @@
-# Guide d'utilisation
+# Guide d'utilisation - Flowering
 
 *Jean-Frédéric Durand*
 
