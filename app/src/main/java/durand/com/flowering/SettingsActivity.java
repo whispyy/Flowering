@@ -16,6 +16,7 @@ import org.w3c.dom.Text;
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -47,12 +48,19 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        //importer les fixtures
+        Button importFixture = (Button) findViewById(R.id.importFixtures);
+        importFixture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                importFixtures();
+            }
+        });
+
     }
 
     public void modifyDateShow(){
         final DatePicker newDate = new DatePicker(this);
-
-
 
         new AlertDialog.Builder(this)
                 .setTitle("Modify")
@@ -96,9 +104,23 @@ public class SettingsActivity extends AppCompatActivity {
         return today;
     }
 
-    /*public void importFixtures(){
-        List<Flower> flowerList;
-        for (int i = 0; i < 10; i++)
-            flowerList.add(new Flower("Plant"+i,2));
-    }*/
+    public void importFixtures(){
+        List<Flower> flowerList = new ArrayList<>();
+        flowerList.add(new Flower("Géranium",2));
+        flowerList.add(new Flower("Coquelicot",4));
+        flowerList.add(new Flower("Ficus",10));
+        flowerList.add(new Flower("Bonsai",5));
+        flowerList.add(new Flower("Jonquille", 2));
+        flowerList.add(new Flower("Hyacinthe",4));
+        flowerList.add(new Flower("Cactus", 25));
+        flowerList.add(new Flower("Orchidée",4));
+        flowerList.add(new Flower("Bananier",10));
+        flowerList.add(new Flower("Pommier",12));
+
+        FlowerDB db = new FlowerDB(getApplicationContext());
+        for(int i=0; i < flowerList.size(); i++)
+            db.addFlower(flowerList.get(i));
+
+        Toast.makeText(this, "10 plants added !", Toast.LENGTH_SHORT).show();
+    }
 }

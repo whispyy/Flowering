@@ -38,7 +38,6 @@ public class HomeAdapter extends ArrayAdapter {
         for(int i= 0; i < flowers.size(); i++)
             if (flowers.get(i).getName().equals(getItem(position).toString()))
                 flower = flowers.get(i);
-        // /Toast.makeText(getContext(), flower.getName(), Toast.LENGTH_SHORT).show();
 
         //ajouter le comparateur de date (86400000 = 24*60*60*1000) et définir la couleur
         Long today = SettingsActivity.getToday();
