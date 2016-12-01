@@ -17,6 +17,14 @@
 - Flower : Correspond à la classe modélisant une plante. Le constructeur par défaut permet d'ajouter une plante en lui passant en paramêtre un nom et une fréquence d'arrosage.
 - FlowerDB : Correspond à la classe permettant de créer et de communiquer avec la base SQLite. Une base de donnée est initiée
 
+<div style="text-align: center;">
+  <img src="https://s25.postimg.org/zb27ogepb/Android_Flowering_UML.png" alt="" style="width: 70%;"/>
+</div>
+
+*La figure représente les différents appels entre les classes et activités effectuées au sein du projet.*
+
+PS : Les classes Flower et FlowerDB on été regroupées sur le schéma pour signaler qu'on ne peut effectuer des opérations sur la base de données sans appeler au préalable l'objet Flower.
+
 ---
 
 ## Description détaillée
