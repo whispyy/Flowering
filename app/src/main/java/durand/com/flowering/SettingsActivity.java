@@ -114,7 +114,7 @@ public class SettingsActivity extends AppCompatActivity {
         flowerList.add(new Flower("Bonsai",5));
         flowerList.add(new Flower("Jonquille", 2));
         flowerList.add(new Flower("Hyacinthe",4));
-        flowerList.add(new Flower("Cactus", 25));
+        flowerList.add(new Flower("Cactus", 3));
         flowerList.add(new Flower("Orchidée",4));
         flowerList.add(new Flower("Bananier",10));
         flowerList.add(new Flower("Pommier",12));
